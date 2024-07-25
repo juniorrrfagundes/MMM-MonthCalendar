@@ -42,5 +42,5 @@ Add the module to your `config.js` file:
 
 ## Notes
 
-- Repository URL: https://github.com/yourusername/MMM-MonthCalendar.git](https://github.com/juniorrrfagundes/MMM-MonthCalendar
+- Repository URL: https://github.com/juniorrrfagundes/MMM-MonthCalendar
 - Author: Junior Rafael Fagundes https://github.com/juniorrrfagundes
