@@ -38,8 +38,9 @@ Add the module to your `config.js` file:
         fadeSpeed: 2000 // Fade speed for updates
     }
 }
+````
 
-### Notes
+## Notes
 
 - Repository URL: https://github.com/yourusername/MMM-MonthCalendar.git](https://github.com/juniorrrfagundes/MMM-MonthCalendar
 - Author: Junior Rafael Fagundes https://github.com/juniorrrfagundes
