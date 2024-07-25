@@ -6,7 +6,7 @@ A Magic Mirror module that displays a monthly calendar with the current day high
 
 - Displays a calendar for the current month.
 - Highlights the current day in red.
-- Includes a header with the text "Calendar" and a horizontal line below it.
+- Includes a header with the text "current month" and a horizontal line below it.
 - Updates automatically at midnight and every 24 hours.
 
 ## Installation
