@@ -1,0 +1,33 @@
+.month-calendar {
+    text-align: center;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: none; /* Remove as bordas */
+    padding: 5px;
+    text-align: center;
+}
+
+.calendar-table td.current-day {
+    color: rgb(182, 35, 35);
+    font-weight: bold;
+}
+
+.calendar-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.calendar-line {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+}
