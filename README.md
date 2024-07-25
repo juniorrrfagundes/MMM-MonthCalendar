@@ -2,6 +2,8 @@
 
 A Magic Mirror module that displays a monthly calendar with the current day highlighted and a header.
 
+![Calendar Image](image/calendar.png)
+
 ## Features
 
 - Displays a calendar for the current month.
