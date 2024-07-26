@@ -9,7 +9,7 @@
 
 .calendar-table th,
 .calendar-table td {
-    border: none; /* Remove as bordas */
+    border: none; 
     padding: 5px;
     text-align: center;
 }
