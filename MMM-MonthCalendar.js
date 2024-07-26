@@ -1,7 +1,8 @@
 Module.register("MMM-MonthCalendar", {
     defaults: {
-        updateInterval: 24 * 60 * 60 * 1000, // Atualiza uma vez por dia
-        fadeSpeed: 2000
+        updateInterval: 24 * 60 * 60 * 1000, 
+        fadeSpeed: 2000,
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     },
 
     getStyles: function() {
@@ -19,13 +20,11 @@ Module.register("MMM-MonthCalendar", {
         var wrapper = document.createElement("div");
         wrapper.className = "month-calendar";
         
-        // Adiciona o cabeçalho
         var header = document.createElement("div");
         header.className = "calendar-header";
         header.innerText = this.month;
         wrapper.appendChild(header);
 
-        // Adiciona uma linha horizontal
         var line = document.createElement("hr");
         line.className = "calendar-line";
         wrapper.appendChild(line);
@@ -33,8 +32,7 @@ Module.register("MMM-MonthCalendar", {
         var table = document.createElement("table");
         table.className = "calendar-table";
 
-        // Adiciona cabeçalhos dos dias da semana
-        var daysOfWeek = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+        var daysOfWeek = this.config.daysOfWeek;
         var headerRow = document.createElement("tr");
         daysOfWeek.forEach(day => {
             var th = document.createElement("th");
@@ -43,7 +41,6 @@ Module.register("MMM-MonthCalendar", {
         });
         table.appendChild(headerRow);
 
-        // Adiciona dias do mês
         this.calendarData.forEach(week => {
             var row = document.createElement("tr");
             week.forEach(day => {
@@ -102,19 +99,16 @@ Module.register("MMM-MonthCalendar", {
     },
 
     scheduleUpdate: function() {
-        // Atualiza o calendário à meia-noite e então a cada 24 horas
         var now = new Date();
         var nextUpdate = new Date();
-        nextUpdate.setHours(24, 0, 0, 0); // Define para a próxima meia-noite
+        nextUpdate.setHours(24, 0, 0, 0); 
         
         if (now.getTime() > nextUpdate.getTime()) {
-            // Se já passou da meia-noite, define o próximo horário de atualização para o dia seguinte
             nextUpdate.setDate(nextUpdate.getDate() + 1);
         }
 
         var timeUntilUpdate = nextUpdate.getTime() - now.getTime();
 
-        // Atualiza o calendário e agenda a próxima atualização para 24 horas depois
         setTimeout(() => {
             this.updateDom(this.config.fadeSpeed);
             setInterval(() => {
