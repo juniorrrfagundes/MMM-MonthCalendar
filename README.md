@@ -37,7 +37,8 @@ Add the module to your `config.js` file:
     position: "top_center", // Position where the module should appear
     config: {
         updateInterval: 24 * 60 * 60 * 1000, // Update once a day
-        fadeSpeed: 2000 // Fade speed for updates
+        fadeSpeed: 2000, // Fade speed for updates
+        daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], // Days of the week, default is English
     }
 }
 ````
