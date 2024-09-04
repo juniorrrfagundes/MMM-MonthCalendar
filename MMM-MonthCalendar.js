@@ -1,6 +1,5 @@
 Module.register("MMM-MonthCalendar", {
     defaults: {
-        updateInterval: 3 * 60 * 60 * 1000, // Intervalo de atualização (24 horas)
         fadeSpeed: 2000,
         daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     },
@@ -94,22 +93,15 @@ Module.register("MMM-MonthCalendar", {
     },
 
     scheduleUpdate: function() {
+        this.updateCalendarData(); // Atualiza os dados do calendário
+        this.updateDom(this.config.fadeSpeed);
         const now = new Date();
         const nextUpdate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 1, 0, 0);
         
-        if (now > nextUpdate) {
-            nextUpdate.setDate(nextUpdate.getDate() + 1);
-        }
-    
         const timeUntilUpdate = nextUpdate.getTime() - now.getTime();
     
         setTimeout(() => {
-            this.updateCalendarData(); // Atualiza os dados do calendário
-            this.updateDom(this.config.fadeSpeed);
-            setInterval(() => {
-                this.updateCalendarData(); // Atualiza os dados do calendário
-                this.updateDom(this.config.fadeSpeed);
-            }, this.config.updateInterval);
+            this.scheduleUpdate(); // Reagendar para o próximo dia
         }, timeUntilUpdate);
     },
 
