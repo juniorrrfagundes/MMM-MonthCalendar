@@ -9,7 +9,7 @@ A Magic Mirror module that displays a monthly calendar with the current day high
 - Displays a calendar for the current month.
 - Highlights the current day in red.
 - Includes a header with the text "current month" and a horizontal line below it.
-- Updates automatically at midnight and every 3 hours.
+- Updates automatically at midnight.
 
 ## Installation
 
@@ -36,7 +36,6 @@ Add the module to your `config.js` file:
     module: "MMM-MonthCalendar",
     position: "top_center", // Position where the module should appear
     config: {
-        updateInterval: 24 * 60 * 60 * 1000, // Update once a day
         fadeSpeed: 2000, // Fade speed for updates
         daysOfWeek: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], // Days of the week, default is English
     }
